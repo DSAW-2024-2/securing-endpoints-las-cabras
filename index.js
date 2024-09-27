@@ -9,7 +9,6 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-// Endpoint para iniciar sesión y devolver la cookie con JWT
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
   if (email === 'admin@admin.com' && password === 'admin') {
@@ -20,12 +19,10 @@ app.post('/login', (req, res) => {
   res.status(401).json({ message: "Invalid credentials" });
 });
 
-// Usar las rutas modulares
 app.use('/users', usersRoutes);
 app.use('/products', productsRoutes);
 app.use('/orders', ordersRoutes);
 
-// Manejo de rutas no encontradas
 app.use((req, res) => {
   res.status(404).json({ message: "Ruta no encontrada" });
 });
