@@ -5,7 +5,9 @@ const usersRoutes = require('./routes/users');
 const productsRoutes = require('./routes/products');
 const ordersRoutes = require('./routes/orders');
 const app = express();
+const cors = require('cors');
 
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
