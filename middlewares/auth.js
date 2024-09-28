@@ -1,3 +1,4 @@
+const auth = require('../middlewares/auth');
 
 const jwt = require('jsonwebtoken');
 
