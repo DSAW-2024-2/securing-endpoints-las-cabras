@@ -1,6 +1,15 @@
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+
+
 const auth = require('../middlewares/auth');
 
 const jwt = require('jsonwebtoken');
+
+const cors = require('cors');
 
 const authenticate = (req, res, next) => {
   const token = req.cookies.jwt;
